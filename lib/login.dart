@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../introslider.dart';
 import '../registration.dart';
+import 'package:http/http.dart' as http;
 
 class Login extends StatefulWidget {
   @override
@@ -174,8 +175,19 @@ class LoginState extends State<Login> {
                                 backgroundColor: const Color(0xff1D51FE),
                                 minimumSize: const Size.fromHeight(50), // NEW
                               ),
-                              onPressed: () {
-                                debugPrint('Kontol');
+                              onPressed: () async {
+                                var url =
+                                    Uri.http('it.iki.id:9999', 'v1/auth/login');
+                                var response = await http.post(url, body: {
+                                  'phone': '081386703029',
+                                  'password': 'kontolmemek'
+                                });
+                                debugPrint(
+                                    'Response status: ${response.statusCode}');
+                                debugPrint('Response body: ${response.body}');
+
+                                // debugPrint(await http.read(Uri.http(
+                                //     'it.iki.id:9999', 'v1/auth/login')));
                               },
                               child: const Text('Masuk',
                                   style: TextStyle(
