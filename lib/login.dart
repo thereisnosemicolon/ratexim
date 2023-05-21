@@ -100,8 +100,8 @@ class LoginState extends State<Login> {
                               ],
                             ),
                           ),
-                          Row(
-                            children: const [
+                          const Row(
+                            children:  [
                               Padding(
                                 padding: EdgeInsets.only(
                                   left: 20,
@@ -145,8 +145,8 @@ class LoginState extends State<Login> {
                               ),
                             ),
                           ),
-                          Row(
-                            children: const [
+                          const Row(
+                            children:  [
                               Padding(
                                 padding: EdgeInsets.only(
                                   left: 20,
