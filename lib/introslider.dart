@@ -106,7 +106,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                           fontFamily: "Inter"),
                     ),
                     Container(
-                        margin: const EdgeInsets.only(left: 220),
+                        margin: const EdgeInsets.only(left: 200),
                         child: OutlinedButton(
                           style: ButtonStyle(
                             backgroundColor:
