@@ -11,7 +11,16 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
+  void dispose(){
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
@@ -119,27 +128,32 @@ class LoginState extends State<Login> {
                               ),
                             ],
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(
+                          Padding(
+                            padding: const EdgeInsets.only(
                               left: 20,
                               right: 20,
                               bottom: 20,
                             ),
                             child: TextField(
-                              decoration: InputDecoration(
+                              controller: emailController,
+                              decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
                                 hintText: 'Email',
                               ),
                             ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(
+                          Padding(
+                            padding: const EdgeInsets.only(
                               left: 20,
                               right: 20,
                               bottom: 20,
                             ),
                             child: TextField(
-                              decoration: InputDecoration(
+                              obscureText: true,
+                              enableSuggestions: true,
+                              autocorrect: true,
+                              controller: passwordController,
+                              decoration: const InputDecoration(
                                 border: OutlineInputBorder(),
                                 hintText: 'Password',
                               ),
@@ -179,12 +193,14 @@ class LoginState extends State<Login> {
                                 var url =
                                     Uri.http('it.iki.id:9999', 'v1/auth/login');
                                 var response = await http.post(url, body: {
-                                  'phone': '081386703029',
-                                  'password': 'kontolmemek'
+                                  'phone': emailController.text,
+                                  'password': passwordController.text
                                 });
                                 debugPrint(
                                     'Response status: ${response.statusCode}');
                                 debugPrint('Response body: ${response.body}');
+                                debugPrint(emailController.text);
+                                debugPrint(passwordController.text);
 
                                 // debugPrint(await http.read(Uri.http(
                                 //     'it.iki.id:9999', 'v1/auth/login')));

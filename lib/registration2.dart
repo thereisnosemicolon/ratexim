@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratexim/registration.dart';
 import '../login.dart';
 
 class Registration2 extends StatefulWidget {
@@ -28,7 +29,7 @@ class Registration2State extends State<Registration2> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Login()),
+                    MaterialPageRoute(builder: (context) => Registration()),
                   );
                 },
                 tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
@@ -85,7 +86,7 @@ class Registration2State extends State<Registration2> {
                           Padding(
                             padding: const EdgeInsets.only(
                               left: 40,
-                              top: 30,
+                              top: 60,
                               right: 40,
                               bottom: 30,
                             ),
