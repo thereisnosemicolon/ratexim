@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ratexim/registration2.dart';
 import '../login.dart';
 
 class Registration extends StatefulWidget {
@@ -179,6 +180,71 @@ class RegistrationState extends State<Registration> {
                                 border: OutlineInputBorder(),
                                 hintText: 'Nomor Telepon',
                               ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(
+                              left: 20,
+                              right: 20,
+                              bottom: 20,
+                            ),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Masuk Sebagai',
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(
+                              left: 20,
+                              right: 20,
+                              bottom: 20,
+                            ),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Provinsi',
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(
+                              left: 20,
+                              right: 20,
+                              bottom: 20,
+                            ),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                hintText: 'Kota',
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 20,
+                              right: 20,
+                              bottom: 20,
+                            ),
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                side: BorderSide.none,
+                                backgroundColor: const Color(0xff1D51FE),
+                                minimumSize: const Size.fromHeight(50), // NEW
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Registration2()),
+                                  );
+                              },
+                              child: const Text('Selanjutnya',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      fontFamily: "Inter")),
                             ),
                           ),
                         ],
